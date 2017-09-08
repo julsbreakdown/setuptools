@@ -199,6 +199,7 @@ class DirectorySandbox(AbstractSandbox):
         self._violation("tmpnam")
 
     def _ok(self,path):
+        if path==os.devnull: return True
         active = self._active
         try:
             self._active = False
